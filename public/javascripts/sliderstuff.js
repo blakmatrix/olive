@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 function setWindowColor()
 {   
-    var socket = io.connect('http://192.168.1.116:3000');
+    var socket = io.connect('http://koteako.com:3838');
     color = getColor("div#color_box");
     $("body").css("background-color","#"+color);
     socket.emit('set_color', {change_color: color });

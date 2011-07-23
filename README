@@ -8,6 +8,7 @@ Dependencies:
 express
 jade
 less
+socket.io
 
 Future:
  Users:
@@ -17,3 +18,9 @@ Future:
   User can toggle a pimento onto thier page.
  Text:
   can use shade of OLIVE?
+  
+Test it out at: http://koteako.com:3838/
+
+To deploy be sure to modify app.js(port), /views/layout.jade(line:var socket = io.connect('http://koteako.com:3838');), and /public/javascripts/sliderstuffs.js(line: var socket = io.connect('http://koteako.com:3838');) 
+
+Contact me at blakmatrix@gmail.com for any questions or tips!

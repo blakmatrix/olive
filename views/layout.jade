@@ -11,7 +11,7 @@ html
     script(type='text/javascript', src='/javascripts/sliderstuff.js')
     script(type='text/javascript', src='/socket.io/socket.io.js')
     script
-      var socket = io.connect('http://192.168.1.116:3000');
+      var socket = io.connect('http://koteako.com:3838');
       socket.on('color_change', function (data) {
         console.log(data);
         $("body").css("background-color","#"+data.color);
