@@ -66,22 +66,6 @@ app.get('/colorpicker', function(req, res){
   });
 });
 
-// Model
-var bcs = [{hex_val: "808000", color_name: "OLIVE (web color)"},
-           {hex_val: "ADFF2F", color_name: "Green-Yellow"},
-           {hex_val: "7CFC00", color_name: "Lawn Green"},
-           {hex_val: "93C572", color_name: "Pistachio"},
-           {hex_val: "9ACD32", color_name: "Yellow-Green"},
-           {hex_val: "8DB600", color_name: "Apple Green"},
-           {hex_val: "9AB973", color_name: "Olive Green"},
-           {hex_val: "808000", color_name: "Olive"},
-           {hex_val: "6B8E23", color_name: "Olive Drab"},
-           {hex_val: "78866B", color_name: "Camouflage Green"},
-           {hex_val: "556B2F", color_name: "Dark Olive Green"}
-];
-//var users = require('./users');
-//var USERS = users.USERS;
-//var User = users.User;
 
 // IO
 
