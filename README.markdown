@@ -38,6 +38,8 @@ To deploy be sure to modify the following lines to your enviroment:
 1. modify app.js: `app.listen(3838);`
 2. modify /views/layout.jade: `var socket = io.connect('http://olive.koteako.com');`
 3. modify /public/javascripts/sliderstuffs.js: `var socket = io.connect('http://olive.koteako.com');`
+
+
 ***
 ### Contact
 Contact me at blakmatrix@gmail.com for any questions or tips!
