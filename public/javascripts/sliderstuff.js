@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 function setWindowColor()
 {   
-    var socket = io.connect('http://koteako.com:3838');
+    var socket = io.connect('http://olive.koteako.com');
     color = getColor("div#color_box");
     $("body").css("background-color","#"+color);
     socket.emit('set_color', {change_color: color });
