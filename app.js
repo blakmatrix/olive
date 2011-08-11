@@ -3,11 +3,12 @@
  * Module dependencies.
  */
 
-var express = require('express');
+var express = require('express'),
+    mongoose = require('mongoose');
 
-var app = module.exports = express.createServer()
-   , io = require('socket.io').listen(app);
-
+//mongoose.connect('mongodb://localhost/olive');    
+var app = module.exports = express.createServer();
+var io = require('socket.io').listen(app);
 
 // Configuration
 
