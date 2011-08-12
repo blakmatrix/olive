@@ -1,0 +1,9 @@
+h1= title
+p Users on OLIVE
+
+- if (users)
+  ul
+  - user.forEach(function(users){
+    li= 
+      a(href="/#{user.login}") #{user.login}
+  - })

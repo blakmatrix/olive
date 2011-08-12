@@ -8,5 +8,7 @@
     , "jade": ">= 0.0.1"
     , "socket.io": ">= 0.0.1"
     , "mongoose": "~1.8.0"
+    , "mongoose-auth": "~0.0.11"
+    , "everyauth": "~0.2.18"    
   }
 }

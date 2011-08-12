@@ -1,8 +1,8 @@
 !!! 5
 html
   head
-    title= title
-    style(type='text/css')= g_color
+    title= "OLIVE auth"
+    //style(type='text/css')= g_color
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js')
     script(type='text/javascript', src='/javascripts/jquery-ui-1.8.14.custom.min.js')
@@ -34,19 +34,11 @@ html
          a(href='/login') Login
          
      - else
-       h3
-         a(href='/#{everyauth.user.login}') #{everyauth.user.login}
-         |  \| 
-         a(href='/logout') Logout
-     //ul#ul_flash
-       //- each message in flash
-         //li= message
-     //#user-id Welcome #{user.email} - aka `everyauth.user.id` #{everyauth.user.id}
+       h3 You're Already logged in...
      #nav()
        a(href='/') Home
        |  \| 
        - if (everyauth.loggedIn)
-         a(href='/#{everyauth.user.login}') Public Profile
-         |  \|  
-       a(href='\users') Users
+         a(href='/users/#{everyauth.user.id}') Public Profile
+       
     != body
