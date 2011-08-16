@@ -58,23 +58,30 @@ var Root        = require('./controllers/root'),
     Colorpicker = require('./controllers/colorpicker');
 
 // Routes
-
+app.all('/*?', function(req, res, next){
+  req.g_color = g_color;
+  if (req.g_color) {
+    next();
+  } else {
+    next(req.flash('error','Unable to set req.g_color'));
+  }
+});
   
-app.get('/', Root.index, g_color);
+app.get('/', Root.index);
 
-app.get('/users', UsersList.index, g_color);
+app.get('/users', UsersList.index);
 
-app.get('/login', Login.index, g_color);
-app.post('/login', Login.login, g_color);
+app.get('/login', Login.index);
+app.post('/login', Login.login);
 
 app.get('/logout', Logout.index);
 
-app.get('/register', Register.index, g_color);
-app.post('/register', Register.register, g_color);
+app.get('/register', Register.index);
+app.post('/register', Register.register);
 
-app.get('/colorpicker', Colorpicker.index, g_color);
+app.get('/colorpicker', Colorpicker.index);
 
-app.get('/:id', Username.index);
+app.get('/:id?', Username.index);
 
 
 // IO

@@ -51,8 +51,9 @@ exports.dynamicHelpers = {
 
             return ma;
       },
-     username: function (req, res) {
-        return req.username;
-    }  
+
+    g_color: function (req, res) {
+        return "body{background-color:#"+req.g_color+";}";
+    } 
 };
 

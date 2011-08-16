@@ -2,10 +2,9 @@ var User = require('../models/user').User;
 var bcrypt = require('bcrypt'); 
 
 // GET /register
-exports.index = function(req, res,g_color) {
+exports.index = function(req, res) {
   res.render('register', {
-    title: 'OLIVE register',
-    g_color: "body{background-color:#"+g_color+";}"
+    title: 'OLIVE register'
   });
 };
 

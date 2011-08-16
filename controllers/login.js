@@ -2,10 +2,9 @@ var bcrypt = require('bcrypt');
 var User = require('../models/user').User;
 
 // GET /login
-exports.index = function(req, res,g_color) {
+exports.index = function(req, res) {
   res.render('login', {
-    title: 'OLIVE login',
-    g_color: "body{background-color:#"+g_color+";}"
+    title: 'OLIVE login'
   });
 };
 

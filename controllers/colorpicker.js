@@ -1,6 +1,5 @@
-exports.index = function(req, res,g_color) {
+exports.index = function(req, res) {
   res.render('colorpicker', {
-    title: 'OLIVE colorpicker',
-    g_color: "body{background-color:#"+g_color+";}"
+    title: 'OLIVE colorpicker'
   });
 };

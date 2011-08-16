@@ -13,7 +13,6 @@ exports.index = function(req, res,  next ) {
     else if (!err) {
       res.render('user', {
         title: 'OLIVE',
-        g_color: "body{background-color:#"+000000+";}",//g_color+";}",
         user: user[0]
       });
     }
