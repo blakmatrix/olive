@@ -121,3 +121,12 @@ function toHex(n) {
       + "0123456789ABCDEF".charAt(n%16);
 }
 
+function hideFlashMessages() {
+    $(this).fadeOut();
+}
+
+setTimeout(function() {
+    $('.flash').each(hideFlashMessages);
+}, 5000);
+$('.flash').click(hideFlashMessages);
+

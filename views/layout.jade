@@ -26,8 +26,9 @@ html
         //$( "#submit_button").button();
         $( "#submit_button" ).click(function(event) { setWindowColor(); });
       });
+    !{flashMessages}
     #header
-     - if (!everyauth.loggedIn)
+     - if (!myauth.loggedIn)
        h3
          a(href='/register') Register
          |  or
@@ -35,18 +36,15 @@ html
          
      - else
        h3
-         a(href='/#{everyauth.user.login}') #{everyauth.user.login}
+         a(href='/#{myauth.username}') #{myauth.username}
          |  \| 
          a(href='/logout') Logout
-     //ul#ul_flash
-       //- each message in flash
-         //li= message
-     //#user-id Welcome #{user.email} - aka `everyauth.user.id` #{everyauth.user.id}
+
      #nav()
        a(href='/') Home
        |  \| 
-       - if (everyauth.loggedIn)
-         a(href='/#{everyauth.user.login}') Public Profile
+       - if (myauth.loggedIn)
+         a(href='/#{myauth.username}') Public Profile
          |  \|  
        a(href='\users') Users
     != body

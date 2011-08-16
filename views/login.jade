@@ -1,13 +1,17 @@
+h2 Login
 - if ('undefined' !== typeof errors && errors.length)
   ul#errors
     - each error in errors
       li.error= error
 form(action='/login', method='POST')
   #login
-    label(for=everyauth.password.loginFormFieldName) Login
-    input(type='text', name=everyauth.password.loginFormFieldName, value=login)
+    label(for='username') Login
+    input(type='text', name='username')
   #password
-    label(for=everyauth.password.passwordFormFieldName) Password
-    input(type='password', name=everyauth.password.passwordFormFieldName)
+    label(for='password') Password
+    input(type='password', name='password')
   #submit
     input(type='submit') Login
+  #remember_me
+  label(for='remember_me') Remember me:
+  input(type='checkbox', name='remember_me')

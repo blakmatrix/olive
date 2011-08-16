@@ -3,7 +3,7 @@ p Users on OLIVE
 
 - if (users)
   ul
-  - user.forEach(function(users){
+  - users.forEach(function(user){
     li= 
-      a(href="/#{user.login}") #{user.login}
+      a(href="/#{user.username}") #{user.username}
   - })
