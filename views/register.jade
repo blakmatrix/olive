@@ -4,23 +4,33 @@ h2 Register
     - each error in errors
       li.error= error
 form(action='/register', method='POST')
-  #login
-    label(for='username') Login
-    input(type='text', name='username')
-  #password
-    label(for='password') Password
-    input(type='password', name='password')
-  #email
-    label(for='email') Email
-    input(type='text', name='email')
-  #first
-    label(for='first') First Name
-    input(type='text', name='first')
-  #last
-    label(for='last') Last Name
-    input(type='text', name='last')
-  #dob
-    label(for='dob') Birthday
-    input(type='date', name='dob')
+  ol
+    li#login
+      label(for='username') Login
+      input(type='text', name='username')
+    li#password
+      label(for='password') Password
+      input(type='password', name='password')
+    li#email
+      label(for='email') Email
+      input(type='text', name='email')
+    li#first
+      label(for='first') First Name
+      input(type='text', name='first')
+    li#last
+      label(for='last') Last Name
+      input(type='text', name='last')
+    li#dob
+      label(for='dob') Birthday
+      input(type='date', name='dob', id='datepicker')
   #submit
-    input(type='submit' ) Register
+    input(type='submit',class="ui-button ui-widget ui-state-default ui-corner-all" ) Register
+  script
+    $(function() {
+        $( "#datepicker" ).datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+

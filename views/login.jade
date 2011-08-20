@@ -4,14 +4,15 @@ h2 Login
     - each error in errors
       li.error= error
 form(action='/login', method='POST')
-  #login
-    label(for='username') Login
-    input(type='text', name='username')
-  #password
-    label(for='password') Password
-    input(type='password', name='password')
+  ol
+    li#login
+      label(for='username') Username
+      input(type='text', name='username')
+    li#password
+      label(for='password') Password
+      input(type='password', name='password')
   #submit
-    input(type='submit') Login
+    input(type='submit',class="ui-button ui-widget ui-state-default ui-corner-all") Login
   #remember_me
-  label(for='remember_me') Remember me:
-  input(type='checkbox', name='remember_me')
+  //label(for='remember_me') Remember me:
+  //input(type='checkbox', name='remember_me', class="ui-button ui-widget ui-state-default ui-corner-all")

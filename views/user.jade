@@ -1,12 +1,31 @@
 h1= title
-p A User on OLIVE
+h3 #{user.username}
 
-p Username: #{user.username}
-p First Name: #{user.first}
-p Last Name: #{user.last}
-p Email: #{user.email}
-p Favorite Color: #{user.fav_color}
-p Birthday: #{user.dob}
-p Member Since: #{user.created_at}
-p Toggle: #{user.c_toggle}
-p Friends: 
+ol
+  li 
+    label Username: 
+    p #{user.username}&nbsp; 
+  li 
+    label First Name: 
+    p #{user.first}&nbsp;
+  li 
+    label Last Name: 
+    p #{user.last}&nbsp;
+  li 
+    label Email: 
+    p #{user.email}&nbsp;
+  li 
+    label Favorite Color: 
+    p #{user.fav_color}&nbsp;
+  li 
+    label Birthday: 
+    p #{user.dob}&nbsp;
+  li 
+    label Member Since: 
+    p #{user.created_at}&nbsp; 
+  li 
+    label Toggle: 
+    p #{user.c_toggle}&nbsp;
+  li 
+    label Friends: 
+    p None&nbsp;

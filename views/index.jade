@@ -1,6 +1,10 @@
 h1= title
 p Welcome to #{title}
 br
-a(href='/colorpicker') Pick Your Favorite Shade of OLIVE
+form(method='link',
+     action='/colorpicker')
+  input(type='submit',
+        class="ui-button ui-widget ui-state-default ui-corner-all",
+        value="Pick Your Favorite Shade of OLIVE") 
 br
 
