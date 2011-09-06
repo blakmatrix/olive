@@ -6,13 +6,30 @@ html lang: 'en', ->
 
     meta(name: 'description', content: @description) if @description?
 
-    link rel: 'stylesheet', href: '/css/style.css'
+    link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Lobster|Droid+Serif|Droid+Sans'
+    link rel: 'stylesheet/less', type: 'text/css', href: '/lib/bootstrap.less'
+    script src: 'less.js', type: 'text/javascript'
 
   body ->
     header ->
-      nav ->
+    div class: 'topbar', ->
+      div class: 'topbar-inner', ->
+        div class: 'container',  ->
+          h3 -> a href:'#', -> 'OLIVE'
+          ul class: 'nav', ->
+            li -> a href:'#colorpicker', -> 'Color Picker'
+            li -> a href:'#users',       -> 'Users'
+            li -> a href:'#about',       -> 'About'
+            li class: 'account open',    ->
+              a href:'#', class: 'account-toggle', -> 'Account'
+              ul class: 'account-menu',  ->
+                li -> a href:'#login',   ->'Login'
+                li -> a href:'#register',->'Register'
+                li class:'divider'
+                li -> a href:'#logout',  ->'Logout'
+    
 
-    div id: 'content', ->
+    div class: 'container', ->
       @body
 
     footer ->
