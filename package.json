@@ -1,10 +1,21 @@
 {
-  "name": "Koteako",
-  "version": "0.0.1",
-  "private": true,
+  "author": "Farrin A. Reid <blakmatrix@gmail.com> (blakmatrix.com)",
+  "name": "Olive",
+  "description": "Olive is a simple app that aims to let users interact on a single shit showing colors of olive",
+  "version": "0.0.2",
+  "homepage": "https://github.com/blakmatrix/olive",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:blakmatrix/olive.git"
+  },
+  "main": "app.coffee",
+  "engines": {
+    "node": "~v0.4.11"
+  },
   "dependencies": {
     "express": "2.4.6",
     "less": "~1.1.4",
     "coffeekup": ">= 0.3.0beta"
-  }
+  },
+  "devDependencies": {}
 }
