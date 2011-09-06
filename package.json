@@ -1,0 +1,10 @@
+{
+  "name": "Koteako",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "2.4.6",
+    "less": "~1.1.4",
+    "coffeekup": ">= 0.3.0beta"
+  }
+}
