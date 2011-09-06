@@ -25,7 +25,7 @@ app.configure 'production', ->
 # Routes
 
 app.get '/', (req, res) ->
-  res.render 'index' 
+  res.render 'index'
 
 
 app.listen 3000

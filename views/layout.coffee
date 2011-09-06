@@ -7,32 +7,43 @@ html lang: 'en', ->
     meta(name: 'description', content: @description) if @description?
 
     link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Lobster|Droid+Serif|Droid+Sans'
-    link rel: 'stylesheet/less', type: 'text/css', href: '/lib/bootstrap.less'
-    script src: 'less.js', type: 'text/javascript'
+    link rel: 'stylesheet', href: '/css/style.css'
+    link rel: 'stylesheet', href:'/css/prettify.css'
+    script src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
+    script src: '/js/prettify.js'
+    script src: '/js/application.js'
 
   body ->
+
     header ->
     div class: 'topbar', ->
       div class: 'topbar-inner', ->
         div class: 'container',  ->
           h3 -> a href:'#', -> 'OLIVE'
           ul class: 'nav', ->
+            li class:'active',-> a href:'#home', -> 'Home'
             li -> a href:'#colorpicker', -> 'Color Picker'
             li -> a href:'#users',       -> 'Users'
             li -> a href:'#about',       -> 'About'
-            li class: 'account open',    ->
-              a href:'#', class: 'account-toggle', -> 'Account'
-              ul class: 'account-menu',  ->
-                li -> a href:'#login',   ->'Login'
-                li -> a href:'#register',->'Register'
+
+          ul class: 'nav nav2',    ->
+            li class: 'dropdown', ->
+              a href:'#', class: 'dropdown-toggle', -> 'Account'
+              ul class: 'dropdown-menu',  ->
+                li -> a href:'#',   ->'Login'
+                li -> a href:'#',->'Register'
                 li class:'divider'
-                li -> a href:'#logout',  ->'Logout'
-    
+                li -> a href:'#',  ->'Logout'
+
+
 
     div class: 'container', ->
+      div class:'home'
       @body
 
     footer ->
-      
-    script src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
+
+
+
+
 
