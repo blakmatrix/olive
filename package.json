@@ -9,6 +9,10 @@
     "url": "git@github.com:blakmatrix/olive.git"
   },
   "main": "app.coffee",
+
+  "scripts": {
+    "start": "./startup"
+  },
   "engines": {
     "node": "~v0.4.11"
   },
