@@ -1,7 +1,5 @@
-@title = 'Chunky Bacon!'
+@title = 'OLIVE'
 
 h1 @title
 
-p 'This is the home page.'
-
-partial 'partial', [1..5]
+p 'I love Olive.'
