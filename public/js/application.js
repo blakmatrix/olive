@@ -25,7 +25,7 @@ $(document).ready(function(){
   //  function(){ $(this).slideUp(); return false; }
   //);
 
- $('a').not(document.getElementById('no-link')).click(function() {
+ $('.topbar a').not(document.getElementById('no-link')).click(function() {
    $.get( $(this).attr('href')+'.json', function(data){
      $('#content').html(data);
    });
