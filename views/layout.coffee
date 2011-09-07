@@ -38,7 +38,6 @@ html lang: 'en', ->
 
 
     div class: 'container', ->
-      div class:'home'
       @body
 
     footer ->
