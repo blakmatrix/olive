@@ -11,7 +11,7 @@
   "main": "app.coffee",
 
   "scripts": {
-    "start": "./startup"
+    "start": "coffee app.coffee"
   },
   "engines": {
     "node": "~v0.4.11"
