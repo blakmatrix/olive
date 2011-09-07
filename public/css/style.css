@@ -1997,6 +1997,9 @@ body {
 a {
   color: #00B7FF;
 }
+.right {
+  float: right;
+}
 .nav.nav2, ul.nav2 {
   float: right;
 }

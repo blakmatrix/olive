@@ -42,8 +42,16 @@ html lang: 'en', ->
       @body
 
     footer ->
-
-
-
+      div class:'inner', ->
+        div class:'container', ->
+          p class:'right', ->
+            "I love OLIVE."
+          p ->
+            text 'Designed by '
+            a href:'https://github.com/blakmatrix', -> 'Farrin A. Reid'
+            br ->
+            text 'Fork ' 
+            a href:'https://github.com/blakmatrix/olive', ->'OLIVE'
+            text ' on github!'
 
 
