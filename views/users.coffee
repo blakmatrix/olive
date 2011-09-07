@@ -1,9 +1,9 @@
- @title = 'OLIVE User'
+@title = 'OLIVE Users'
 
 
 div class:'users', ->
   h1 @title
   if @users
-    ul
+    ul ->
       for user in @users
         li -> a href='/#{user.username}', -> '#{user.username}'

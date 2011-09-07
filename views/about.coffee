@@ -1,5 +1,5 @@
 
-@title = 'OLIVE about'
+@title = 'OLIVE About'
 
 
 div class:'home', ->
