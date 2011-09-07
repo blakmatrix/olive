@@ -28,7 +28,7 @@ html lang: 'en', ->
 
           ul class: 'nav nav2',    ->
             li class: 'dropdown', ->
-              a href:'#', class: 'dropdown-toggle', -> 'Account'
+              a href:'#', id:'no-link',class: 'dropdown-toggle', -> 'Account'
               ul class: 'dropdown-menu',  ->
                 li -> a href:'/login',   ->'Login'
                 li -> a href:'/register',->'Register'
