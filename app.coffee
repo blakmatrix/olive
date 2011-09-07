@@ -53,7 +53,11 @@ app.get '/u/:id?', (req, res,next) ->
       username: req.params.id
       first: 'blah'
 
+app.get '/about', (req, res) ->
+  res.render 'about'
 
+app.get '/logout', (req, res, next) ->
+  res.redirect('/')
 
 app.listen process.env.PORT || 3000
 console.log "Listening on port %d in %s mode...", app.address().port, app.settings.env

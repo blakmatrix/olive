@@ -19,21 +19,21 @@ html lang: 'en', ->
     div class: 'topbar', ->
       div class: 'topbar-inner', ->
         div class: 'container',  ->
-          h3 -> a href:'#', -> 'OLIVE'
+          h3 -> a href:'/', -> 'OLIVE'
           ul class: 'nav', ->
-            li class:'active',-> a href:'#home', -> 'Home'
-            li -> a href:'#colorpicker', -> 'Color Picker'
-            li -> a href:'#users',       -> 'Users'
-            li -> a href:'#about',       -> 'About'
+            li -> a href:'/', -> 'Home'
+            li -> a href:'/colorpicker', -> 'Color Picker'
+            li -> a href:'/users',       -> 'Users'
+            li -> a href:'/about',       -> 'About'
 
           ul class: 'nav nav2',    ->
             li class: 'dropdown', ->
               a href:'#', class: 'dropdown-toggle', -> 'Account'
               ul class: 'dropdown-menu',  ->
-                li -> a href:'#',   ->'Login'
-                li -> a href:'#',->'Register'
+                li -> a href:'/login',   ->'Login'
+                li -> a href:'/register',->'Register'
                 li class:'divider'
-                li -> a href:'#',  ->'Logout'
+                li -> a href:'/logout',  ->'Logout'
 
 
 
@@ -49,7 +49,7 @@ html lang: 'en', ->
             text 'Designed by '
             a href:'https://github.com/blakmatrix', -> 'Farrin A. Reid'
             br ->
-            text 'Fork ' 
+            text 'Fork '
             a href:'https://github.com/blakmatrix/olive', ->'OLIVE'
             text ' on github!'
 
