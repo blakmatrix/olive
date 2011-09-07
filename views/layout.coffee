@@ -38,7 +38,8 @@ html lang: 'en', ->
 
 
     div class: 'container', ->
-      @body
+      div id: 'content', ->
+        @body
 
     footer ->
       div class:'inner', ->

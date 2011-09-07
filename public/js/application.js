@@ -25,7 +25,13 @@ $(document).ready(function(){
   //  function(){ $(this).slideUp(); return false; }
   //);
 
+ $('a').click(function() {
+   $.get( $(this).attr('href')+'.json', function(data){
+     $('#content').html(data);
+   });
 
+   return false;
+ });
 
 
 
