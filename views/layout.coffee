@@ -36,7 +36,8 @@ html lang: 'en', ->
                 li -> a href:'/logout',  ->'Logout'
 
 
-
+    a href: 'https://github.com/blakmatrix/olive', ->
+      img style: 'position: absolute; top: 0; left: 0; border: 0; z-index:10001', src: 'https://a248.e.akamai.net/assets.github.com/img/5d21241b64dc708fcbb701f68f72f41e9f1fadd6/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67', alt: 'Fork me on GitHub'
     div class: 'container', ->
       div id: 'content', ->
         @body
@@ -46,12 +47,8 @@ html lang: 'en', ->
         div class:'container', ->
           h3 class:'right', ->
             "I love OLIVE."
-          p ->
-            text 'Designed by '
-            a href:'https://github.com/blakmatrix', -> 'Farrin A. Reid'
-            br ->
-            text 'Fork '
-            a href:'https://github.com/blakmatrix/olive', ->'OLIVE'
-            text ' on github!'
+          h3 ->
+            a href:'https://github.com/blakmatrix', -> 'Designed by Farrin A. Reid'
+
 
 

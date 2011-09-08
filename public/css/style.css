@@ -2012,3 +2012,6 @@ a {
   z-index: 10000;
   overflow: visible;
 }
+#footer a {
+  color: white;
+}
