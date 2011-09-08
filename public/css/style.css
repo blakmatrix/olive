@@ -2003,3 +2003,12 @@ a {
 .nav.nav2, ul.nav2 {
   float: right;
 }
+#footer {
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  overflow: visible;
+}

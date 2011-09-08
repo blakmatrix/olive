@@ -3,7 +3,8 @@
 
 
 div class:'colorpicker', ->
-  h1 @title
+  div class:'page-header', ->
+    h1 @title
 
   p -> 'Use the Olive Color Picker Tool to pick your shade of olive'
   br ->

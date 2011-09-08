@@ -2,7 +2,8 @@
 
 
 div class:'home', ->
-  h1 @title
+  div class:'page-header', ->
+    h1 @title
 
   p -> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam accumsan dictum erat, non ullamcorper tellus elementum et. Sed in arcu dui. Cras tristique sodales diam tincidunt commodo. Pellentesque at nibh enim. Donec eget augue velit, et pharetra elit. Maecenas lacinia euismod ipsum. Donec est nunc, rutrum vestibulum consequat id, vestibulum a ante. Donec rhoncus ultrices augue vel ultricies. Sed eu risus id ante ornare vehicula et ac diam. Vestibulum imperdiet, dolor sit amet molestie posuere, metus eros tempus est, vitae condimentum velit dui non odio. Praesent nec vulputate diam. Aliquam mattis odio et nisi fringilla vehicula. Morbi enim enim, rhoncus ut sodales a, fringilla sed nisi. Nam in nulla eu justo venenatis molestie. Morbi et tristique diam.'
   br ->

@@ -2,10 +2,11 @@
 
 
 div class:'user', ->
-  h1 @title
+  div class:'page-header', ->
+    h1 @title
   if "#{@user.first}"=="blah"
     h2 "#{@user.username}"
-    ul ->
+    ul class: 'unstyled', ->
       li ->
         label 'Username: '
         p "#{@user.username}&nbsp;"
@@ -16,7 +17,7 @@ div class:'user', ->
         label 'Last Name: '
         p "#{@user.last}&nbsp;"
       li ->
-        'label Email: '
+        label 'Email: '
         p "#{@user.email}&nbsp;"
       li ->
         label 'Favorite Color: '

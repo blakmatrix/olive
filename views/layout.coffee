@@ -41,10 +41,10 @@ html lang: 'en', ->
       div id: 'content', ->
         @body
 
-    footer ->
-      div class:'inner', ->
+    div id:'footer', ->
+      div class:'topbar-inner', ->
         div class:'container', ->
-          p class:'right', ->
+          h3 class:'right', ->
             "I love OLIVE."
           p ->
             text 'Designed by '

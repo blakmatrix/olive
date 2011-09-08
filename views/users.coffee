@@ -2,8 +2,9 @@
 
 
 div class:'users', ->
-  h1 @title
+  div class:'page-header', ->
+    h1 @title
   if @users
-    ul ->
+    ul class: 'unstyled', ->
       for user in @users
         li -> a href='/#{user.username}', -> '#{user.username}'

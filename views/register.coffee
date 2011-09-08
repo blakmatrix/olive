@@ -2,10 +2,11 @@
 
 
 div class:'register', ->
-  h1 @title
+  div class:'page-header', ->
+    h1 @title
 
-  form action: '/register', method: 'POST', ->
-    ul ->
+  form class:'form-stacked', action: '/register', method: 'POST', ->
+    ul class: 'unstyled', ->
       li id: 'login', ->
         label for: 'username', 'Login'
         input type: 'text', name: 'username'
@@ -24,6 +25,6 @@ div class:'register', ->
       li id: 'dob', ->
         label for: 'dob', 'Birthday'
         input id: 'datepicker', class: 'hasDatepicker', type: 'date', name: 'dob'
-      input type: 'submit', value: 'Register'
+      input class:'btn primary', type: 'submit', value: 'Register'
 
 
