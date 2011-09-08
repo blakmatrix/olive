@@ -4,6 +4,10 @@ $(document).ready(function(){
   // ====================
 
   prettyPrint();
+  $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
+  $('#submit_color').bind('click', function(){
+    $("body").css("background-color", "#"+$(".colorpicker_hex input").val() );
+  });
 
 //
   function setButton(id) {
@@ -38,6 +42,10 @@ $(document).ready(function(){
     setButton($(this).attr('id'));
     $.get( $(this).attr('href')+'.json', function(data){
       $('#content').html(data);
+      $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
+      $('#submit_color').bind('click', function(){
+        $("body").css("background-color", "#"+$(".colorpicker_hex input").val() );
+      });
 
     });
     $('.dropdown-menu').slideUp();

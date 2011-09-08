@@ -9,9 +9,12 @@ html lang: 'en', ->
     link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Lobster|Droid+Serif|Droid+Sans'
     link rel: 'stylesheet', href: '/css/style.css'
     link rel: 'stylesheet', href:'/css/prettify.css'
+    link rel: 'stylesheet', href:'/css/colorpicker.css', media:'screen'
     script src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
     script src: '/js/prettify.js'
+    script src: '/js/colorpicker.js'
     script src: '/js/application.js'
+
 
   body ->
 
