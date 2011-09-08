@@ -2004,7 +2004,7 @@ a {
   float: right;
 }
 #footer {
-  height: 40px;
+  height: 35px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -2013,5 +2013,5 @@ a {
   overflow: visible;
 }
 #footer a {
-  color: white;
+  color: #404040;
 }

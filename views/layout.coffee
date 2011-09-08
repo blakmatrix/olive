@@ -19,21 +19,21 @@ html lang: 'en', ->
     div class: 'topbar', ->
       div class: 'topbar-inner', ->
         div class: 'container',  ->
-          h3 -> a href:'/', -> 'OLIVE'
+          h3 -> a href:'/', id:'home1', -> 'OLIVE'
           ul class: 'nav', ->
-            li -> a href:'/', -> 'Home'
-            li -> a href:'/colorpicker', -> 'Color Picker'
-            li -> a href:'/users',       -> 'Users'
-            li -> a href:'/about',       -> 'About'
+            li class:'active',  -> a  href:'/', id:'home', -> 'Home'
+            li -> a id:'colorpicker', href:'/colorpicker', -> 'Color Picker'
+            li -> a id:'users',       href:'/users',       -> 'Users'
+            li -> a id:'about',       href:'/about',       -> 'About'
 
           ul class: 'nav nav2',    ->
             li class: 'dropdown', ->
               a href:'#', id:'no-link',class: 'dropdown-toggle', -> 'Account'
               ul class: 'dropdown-menu',  ->
-                li -> a href:'/login',   ->'Login'
-                li -> a href:'/register',->'Register'
+                li -> a href:'/login', id:'login',       ->'Login'
+                li -> a href:'/register', id:'register', ->'Register'
                 li class:'divider'
-                li -> a href:'/logout',  ->'Logout'
+                li -> a href:'/logout', id:'home2',       ->'Logout'
 
 
     a href: 'https://github.com/blakmatrix/olive', ->

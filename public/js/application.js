@@ -5,7 +5,12 @@ $(document).ready(function(){
 
   prettyPrint();
 
-
+//
+  function setButton(id) {
+    if (id =='home1'||id =='home2')id='home';
+    $('.topbar .nav li').removeClass('active');
+    $('#'+id).parent('li').addClass('active')
+  }
 
 
 
@@ -13,25 +18,32 @@ $(document).ready(function(){
   // ===============================
 
   $("body").bind("click", function (e) {
-    $('.dropdown-toggle, .menu').parent("li").removeClass("open");
+    //$('.dropdown-toggle, .menu').parent("li").removeClass("open");
+    $('.dropdown-menu').slideUp();
   });
   $(".dropdown-toggle, .menu").click(function (e) {
-   var $li = $(this).parent("li").toggleClass('open');
+   //var $li = $(this).parent("li").toggleClass('open');
+   $('.dropdown-menu').slideDown();
     return false;
-  });
+  }
+
+  );
 
   //$('.dropdown-toggle, .menu').toggle(
   //  function(){ $(this).slideDown(); return false; },
-  //  function(){ $(this).slideUp(); return false; }
+  //  function(){ $(this) return false; }
   //);
 
- $('.topbar a').not(document.getElementById('no-link')).click(function() {
-   $.get( $(this).attr('href')+'.json', function(data){
-     $('#content').html(data);
-   });
+  $('.topbar a').not(document.getElementById('no-link')).click(function() {
+    setButton($(this).attr('id'));
+    $.get( $(this).attr('href')+'.json', function(data){
+      $('#content').html(data);
 
-   return false;
- });
+    });
+    $('.dropdown-menu').slideUp();
+
+    return false;
+  });
 
 
 
