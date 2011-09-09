@@ -9,7 +9,6 @@
     "url": "git@github.com:blakmatrix/olive.git"
   },
   "main": "app.coffee",
-
   "scripts": {
     "start": "node_modules/coffeekup/node_modules/coffee-script/bin/coffee app.coffee"
   },
@@ -19,7 +18,8 @@
   "dependencies": {
     "express": "2.4.6",
     "less": "~1.1.4",
-    "coffeekup": ">= 0.3.0beta"
+    "coffeekup": ">= 0.3.0beta",
+    "socket.io": "~0.8.4"
   },
   "devDependencies": {}
 }

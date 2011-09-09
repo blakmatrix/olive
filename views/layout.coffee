@@ -13,6 +13,7 @@ html lang: 'en', ->
     script src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
     script src: '/js/prettify.js'
     script src: '/js/colorpicker.js'
+    script src: '/socket.io/socket.io.js'
     script src: '/js/application.js'
 
 

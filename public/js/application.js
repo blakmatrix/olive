@@ -4,22 +4,53 @@ $(document).ready(function(){
   // ====================
 
   prettyPrint();
+
   $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
-  $('#submit_color').bind('click', function(){
+  // ================================
+  //    SUBMIT COLOR & Button init
+  // ================================
+  function submitColorBtn(){
+    $('#submit_color').bind('click', function(){
+    var hsb = {h:parseInt($(".colorpicker_hsb_h input").val()),
+                s:parseInt($(".colorpicker_hsb_s input").val()),
+                b:parseInt($(".colorpicker_hsb_b input").val())};
+      setColors( hsb );
+      emitColors( hsb );
+    });
+  }
+  submitColorBtn();
 
-        //setColors( $(".colorpicker_hex input").val() );
-        setColors( {h:parseInt($(".colorpicker_hsb_h input").val()),
-                    s:parseInt($(".colorpicker_hsb_s input").val()),
-                    b:parseInt($(".colorpicker_hsb_b input").val())} );
-   });
-
-//
   function setButton(id) {
     if (id =='home1'||id =='home2')id='home';
     $('.topbar .nav li').removeClass('active');
     $('#'+id).parent('li').addClass('active')
   }
+ // ==============================================
+ //                 Socket IO
+ // ==============================================
+ var socket = io.connect();
+ socket.on('color_change', function (data) {
+   //console.log('color_change: ');
+   //console.log(data);
+   setColors(data.col);
+  });
+  socket.on('update_color', function (data) {
+    //console.log('update_color: ');
+    //console.log(data);
+    setColors(data.col);
+  });
+  function emitColors(col){
+    //console.log('set_color: ');
+    //console.log(col);
+    var socket = io.connect();
+    socket.emit('set_color', {change_color: col });
+  }
+  // ==============================================
+  //            setColors & Helpers
+  // ==============================================
+
   function setColors(col){
+    //console.log('col= '+col);
     var txtb=col.b +50>100?col.b-50:col.b +50;
     var baseHex = $('#colorpickerHolder').ColorPickerHSBToHex(
           {h:col.h,
@@ -46,6 +77,7 @@ $(document).ready(function(){
     //bars
 
     colorBar(barColorH,barColorL);
+
     //input btn
     //HSBToHex
   }
@@ -64,8 +96,9 @@ $(document).ready(function(){
   }
 
 
-  // Dropdown example for topbar nav
-  // ===============================
+  // ==============================================
+  //            Navbar Bindings
+  // ==============================================
 
   $("body").bind("click", function (e) {
     //$('.dropdown-toggle, .menu').parent("li").removeClass("open");
@@ -78,28 +111,23 @@ $(document).ready(function(){
   }
 
   );
-
-  //$('.dropdown-toggle, .menu').toggle(
-  //  function(){ $(this).slideDown(); return false; },
-  //  function(){ $(this) return false; }
-  //);
-
+  // ==============================================
+  //            NAVIGATION(JSONified+)
+  // ==============================================
   $('.topbar a').not(document.getElementById('no-link')).click(function() {
     if ($(location).attr('pathname') == "/"){
       setButton($(this).attr('id'));
       $.get( $(this).attr('href')+'.json', function(data){
         $('#content').html(data);
         $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
-        $('#submit_color').bind('click', function(){
-
-          //setColors( $(".colorpicker_hex input").val() );
-          setColors( {h:parseInt($(".colorpicker_hsb_h input").val()),
-                      s:parseInt($(".colorpicker_hsb_s input").val()),
-                      b:parseInt($(".colorpicker_hsb_b input").val())} );
-        });
+        // SUBMIT COLOR
+        submitColorBtn();
 
 
       });
+      // ---------------
+      // COSMETIC NAV
+      // ---------------
       var id = $(this).attr('id');
       if (id =='home1'||id =='home2')id='home';
       location.hash = "#"+id;

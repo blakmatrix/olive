@@ -2,8 +2,9 @@ express = require 'express'
 kup = require 'coffeekup'
 url = require 'url'
 
-app = module.exports = express.createServer()
 
+app = module.exports = express.createServer()
+io = require('socket.io').listen app
 
 # Configuration
 
@@ -92,5 +93,20 @@ app.get '/logout.:format?', (req, res, next) ->
   else
     res.redirect('/')
 
+# Socket.IO
+hsb =
+  h: 60
+  s: 100
+  b: 94
+
+io.sockets.on 'connection', (socket) ->
+  socket.emit 'color_change', col: hsb
+  socket.on 'set_color', (data) ->
+    hsb=data.change_color;
+    socket.broadcast.emit 'update_color',  col: data.change_color
+
+
+
+# Lets run this app!
 app.listen process.env.PORT || 3000
 console.log "Listening on port %d in %s mode...", app.address().port, app.settings.env
