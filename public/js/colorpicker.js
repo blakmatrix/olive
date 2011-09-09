@@ -472,6 +472,9 @@
 						setNewColor(col, cal.get(0));
 					}
 				});
+			},
+			HSB2Hex: function(val){
+        return HSBToHex(val);
 			}
 		};
 	}();
@@ -479,6 +482,7 @@
 		ColorPicker: ColorPicker.init,
 		ColorPickerHide: ColorPicker.hidePicker,
 		ColorPickerShow: ColorPicker.showPicker,
-		ColorPickerSetColor: ColorPicker.setColor
+		ColorPickerSetColor: ColorPicker.setColor,
+    ColorPickerHSBToHex: ColorPicker.HSB2Hex
 	});
 })(jQuery)

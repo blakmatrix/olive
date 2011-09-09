@@ -6,8 +6,12 @@ $(document).ready(function(){
   prettyPrint();
   $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
   $('#submit_color').bind('click', function(){
-    $("body").css("background-color", "#"+$(".colorpicker_hex input").val() );
-  });
+
+        //setColors( $(".colorpicker_hex input").val() );
+        setColors( {h:parseInt($(".colorpicker_hsb_h input").val()),
+                    s:parseInt($(".colorpicker_hsb_s input").val()),
+                    b:parseInt($(".colorpicker_hsb_b input").val())} );
+   });
 
 //
   function setButton(id) {
@@ -15,7 +19,50 @@ $(document).ready(function(){
     $('.topbar .nav li').removeClass('active');
     $('#'+id).parent('li').addClass('active')
   }
+  function setColors(col){
+    var txtb=col.b +50>100?col.b-50:col.b +50;
+    var baseHex = $('#colorpickerHolder').ColorPickerHSBToHex(
+          {h:col.h,
+           s:col.s,
+           b:col.b});
+    var textColor = $('#colorpickerHolder').ColorPickerHSBToHex(
+          {h:0,
+           s:0,
+           b: txtb});
+    var barColorH = $('#colorpickerHolder').ColorPickerHSBToHex(
+          {h:col.h,
+           s:col.s,
+           b:20});
+    var barColorL = $('#colorpickerHolder').ColorPickerHSBToHex(
+          {h:col.h,
+           s:col.s,
+           b:13});
 
+    //bg
+    $("body").css("background-color", "#"+baseHex );
+    //text
+    $("body").css("color", "#"+textColor );
+    $("h1, h2, h3, h4, h5, h6").css("color", "#"+textColor );
+    //bars
+
+    colorBar(barColorH,barColorL);
+    //input btn
+    //HSBToHex
+  }
+
+  function colorBar(topC, botC){
+    $(".topbar-inner, .topbar .fill").css("background-color", "#"+botC );
+
+    $(".topbar-inner, .topbar .fill").css("background-image", "-khtml-gradient(linear, left top, left bottom, from(#"+topC+"), to(#"+botC+"))");
+    $(".topbar-inner, .topbar .fill").css("background-image", "-moz-linear-gradient(top, #"+topC+", #"+botC+")");
+    $(".topbar-inner, .topbar .fill").css("background-image", "-ms-linear-gradient(top, #"+topC+", #"+botC+")");
+    $(".topbar-inner, .topbar .fill").css("background-image", "-webkit-gradient(linear, left top, left bottom, color-stop(0%, #"+topC+"), color-stop(100%, #"+botC+"))");
+    $(".topbar-inner, .topbar .fill").css("background-image", "-webkit-linear-gradient(top, #"+topC+", #"+botC+")");
+    $(".topbar-inner, .topbar .fill").css("background-image", "-o-linear-gradient(top, #"+topC+", #"+botC+")");
+    $(".topbar-inner, .topbar .fill").css("background-image", "linear-gradient(top, #"+topC+", #"+botC+")");
+    //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+
+  }
 
 
   // Dropdown example for topbar nav
@@ -44,7 +91,11 @@ $(document).ready(function(){
       $('#content').html(data);
       $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
       $('#submit_color').bind('click', function(){
-        $("body").css("background-color", "#"+$(".colorpicker_hex input").val() );
+
+        //setColors( $(".colorpicker_hex input").val() );
+        setColors( {h:parseInt($(".colorpicker_hsb_h input").val()),
+                    s:parseInt($(".colorpicker_hsb_s input").val()),
+                    b:parseInt($(".colorpicker_hsb_b input").val())} );
       });
 
     });
