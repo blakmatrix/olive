@@ -52,7 +52,6 @@ $(document).ready(function(){
 
   function colorBar(topC, botC){
     $(".topbar-inner, .topbar .fill").css("background-color", "#"+botC );
-
     $(".topbar-inner, .topbar .fill").css("background-image", "-khtml-gradient(linear, left top, left bottom, from(#"+topC+"), to(#"+botC+"))");
     $(".topbar-inner, .topbar .fill").css("background-image", "-moz-linear-gradient(top, #"+topC+", #"+botC+")");
     $(".topbar-inner, .topbar .fill").css("background-image", "-ms-linear-gradient(top, #"+topC+", #"+botC+")");
@@ -98,7 +97,11 @@ $(document).ready(function(){
                     b:parseInt($(".colorpicker_hsb_b input").val())} );
       });
 
+
     });
+    var id = $(this).attr('id');
+    if (id =='home1'||id =='home2')id='home';
+    location.hash = "#"+id;
     $('.dropdown-menu').slideUp();
 
     return false;
