@@ -1994,7 +1994,6 @@ html {
   height: 100%;
 }
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100%;
 }
@@ -2021,4 +2020,14 @@ a {
 }
 #set_fav_color {
   margin-left: 38px;
+}
+.about,
+.color_picker,
+.home,
+.login,
+.register,
+.user,
+.users {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
