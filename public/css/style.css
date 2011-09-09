@@ -2031,3 +2031,15 @@ a {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+#colorpickerPreview {
+  width: 356px;
+  height: 176px;
+  float: left;
+  border: 1px;
+  border-color: black;
+  background-color: white;
+}
+#colorpickerHolder {
+  width: 356px;
+  float: left;
+}
