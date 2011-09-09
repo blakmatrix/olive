@@ -32,13 +32,13 @@ app.get '/.:format?', (req, res) ->
   else
     res.render 'index'
 
-app.get '/#login.:format?', (req, res) ->
+app.get '/login.:format?', (req, res) ->
   if req.params.format == "json"
     res.render 'login', layout: false
   else
     res.render 'login'
 
-app.post '/#login.:format?', (req, res) ->
+app.post '/login.:format?', (req, res) ->
   if req.params.format == "json"
     res.redirect('/.json')
   else

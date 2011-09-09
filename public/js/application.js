@@ -85,26 +85,31 @@ $(document).ready(function(){
   //);
 
   $('.topbar a').not(document.getElementById('no-link')).click(function() {
-    setButton($(this).attr('id'));
-    $.get( $(this).attr('href')+'.json', function(data){
-      $('#content').html(data);
-      $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
-      $('#submit_color').bind('click', function(){
+    if ($(location).attr('pathname') == "/"){
+      setButton($(this).attr('id'));
+      $.get( $(this).attr('href')+'.json', function(data){
+        $('#content').html(data);
+        $('#colorpickerHolder').ColorPicker({color: '#f0f000',flat: true});
+        $('#submit_color').bind('click', function(){
 
-        //setColors( $(".colorpicker_hex input").val() );
-        setColors( {h:parseInt($(".colorpicker_hsb_h input").val()),
-                    s:parseInt($(".colorpicker_hsb_s input").val()),
-                    b:parseInt($(".colorpicker_hsb_b input").val())} );
+          //setColors( $(".colorpicker_hex input").val() );
+          setColors( {h:parseInt($(".colorpicker_hsb_h input").val()),
+                      s:parseInt($(".colorpicker_hsb_s input").val()),
+                      b:parseInt($(".colorpicker_hsb_b input").val())} );
+        });
+
+
       });
+      var id = $(this).attr('id');
+      if (id =='home1'||id =='home2')id='home';
+      location.hash = "#"+id;
+      $('.dropdown-menu').slideUp();
 
-
-    });
-    var id = $(this).attr('id');
-    if (id =='home1'||id =='home2')id='home';
-    location.hash = "#"+id;
-    $('.dropdown-menu').slideUp();
-
-    return false;
+      return false;
+    }
+    else{
+      return true;
+    }
   });
 
 
