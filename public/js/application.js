@@ -27,23 +27,17 @@ $(document).ready(function(){
     $('.topbar .nav li').removeClass('active');
     $('#'+id).parent('li').addClass('active')
   }
- // ==============================================
- //                 Socket IO
- // ==============================================
- var socket = io.connect();
- socket.on('color_change', function (data) {
-   //console.log('color_change: ');
-   //console.log(data);
+  // ==============================================
+  //                 Socket IO
+  // ==============================================
+  var socket = io.connect();
+  socket.on('color_change', function (data) {
    setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill");
   });
   socket.on('update_color', function (data) {
-    //console.log('update_color: ');
-    //console.log(data);
     setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill");
   });
   function emitColors(col){
-    //console.log('set_color: ');
-    //console.log(col);
     var socket = io.connect();
     socket.emit('set_color', {change_color: col });
   }
@@ -81,7 +75,10 @@ $(document).ready(function(){
     colorBar(barColorH,barColorL, navbar);
 
     //input btn
-    //HSBToHex
+    //dropdownmenu
+    if(bg == "body"){
+        $(".dropdown-menu").css("background-color", "#"+barColorH );
+    }
   }
 
   function colorBar(topC, botC, navbar){
@@ -128,7 +125,9 @@ $(document).ready(function(){
         $('#colorpickerHolder').ColorPicker({color: '#f0f000',
                                               flat: true,
                                           onChange: function (hsb) {previewChange(hsb);}});
-        // SUBMIT COLOR
+        //var socket = io.connect();
+        socket.emit('update_me');
+        // SUBMIT COLOR BIND
         submitColorBtn();
 
 

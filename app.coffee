@@ -101,6 +101,8 @@ hsb =
 
 io.sockets.on 'connection', (socket) ->
   socket.emit 'color_change', col: hsb
+  socket.on 'update_me', () ->
+    socket.emit 'color_change', col: hsb
   socket.on 'set_color', (data) ->
     hsb=data.change_color;
     socket.broadcast.emit 'update_color',  col: data.change_color

@@ -2060,3 +2060,10 @@ a {
 #divbar {
   background-color: #222;
 }
+#containerBarPreview {
+  width: 354px;
+}
+#containerBodyPreview {
+  width: 320px;
+  margin: 0 auto;
+}

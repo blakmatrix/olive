@@ -50,7 +50,7 @@ html lang: 'en', ->
       div class:'topbar-inner', ->
         div class:'container', ->
           h3 class:'right', ->
-            "I love OLIVE."
+            a href: '#', style:'text-decorations: none;', -> 'I love OLIVE.'
           h3 ->
             a href:'https://github.com/blakmatrix', -> 'Designed by Farrin A. Reid'
 
