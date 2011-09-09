@@ -2034,12 +2034,29 @@ a {
 #colorpickerPreview {
   width: 356px;
   height: 176px;
+  margin-left: 38px;
   float: left;
-  border: 1px;
+  border-style: solid;
+  border-width: 1px;
   border-color: black;
   background-color: white;
 }
 #colorpickerHolder {
   width: 356px;
+  height: 176px;
   float: left;
+}
+#colorpickerContainer {
+  width: auto;
+  height: auto;
+}
+#btnContainer {
+  clear: both;
+  margin-top: 10px;
+}
+#divbar {
+  position: relative;
+}
+#divbar {
+  background-color: #222;
 }
