@@ -28,11 +28,13 @@ Text:
 can use shade of OLIVE?
 
 ## Try it out
-Test it out at: http://olive.koteako.com/
+Test it out at: http://olive.no.de
 
+## Install
+`npm i olive`
 
 ## Deployment
-Just run: `coffee app. coffee`
+Just run: `coffee app.coffee`
 
 
 ***
