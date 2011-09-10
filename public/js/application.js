@@ -1,13 +1,10 @@
 $(document).ready(function(){
 
-  // Google code prettify
-  // ====================
-
-  prettyPrint();
 
   $('#colorpickerHolder').ColorPicker({color: '#f0f000',
                                        flat: true,
                                        onChange: function (hsb) {previewChange(hsb);}});
+  $('#colorpickerPreview').css('background-color',$('body').css('background-color'));
   // ================================
   //    SUBMIT COLOR & Button init
   // ================================
@@ -16,7 +13,7 @@ $(document).ready(function(){
     var hsb = {h:parseInt($(".colorpicker_hsb_h input").val()),
                 s:parseInt($(".colorpicker_hsb_s input").val()),
                 b:parseInt($(".colorpicker_hsb_b input").val())};
-      setColors(hsb,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill");
+      setColors(hsb,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list", "small");
       emitColors( hsb );
     });
   }
@@ -32,10 +29,10 @@ $(document).ready(function(){
   // ==============================================
   var socket = io.connect();
   socket.on('color_change', function (data) {
-   setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill");
+   setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list", "small");
   });
   socket.on('update_color', function (data) {
-    setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill");
+    setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list","small");
   });
   function emitColors(col){
     var socket = io.connect();
@@ -45,7 +42,7 @@ $(document).ready(function(){
   //            setColors & Helpers
   // ==============================================
 
-  function setColors(col, bg, headers, navbar){
+  function setColors(col, bg, headers, navbar, link, small){
     //console.log('col= '+col);
     var txtb=col.b +50>100?col.b-50:col.b +50;
     var baseHex = $('#colorpickerHolder').ColorPickerHSBToHex(
@@ -55,6 +52,18 @@ $(document).ready(function(){
     var textColor = $('#colorpickerHolder').ColorPickerHSBToHex(
           {h:0,
            s:0,
+           b: txtb});
+    var headColor = $('#colorpickerHolder').ColorPickerHSBToHex(
+          {h:col.h,
+           s:75,
+           b: txtb});
+    var subColor = $('#colorpickerHolder').ColorPickerHSBToHex(
+          {h:parseInt(360-col.h),
+           s:75,
+           b: txtb});
+    var linkColor = $('#colorpickerHolder').ColorPickerHSBToHex(
+          {h:134,
+           s:75,
            b: txtb});
     var barColorH = $('#colorpickerHolder').ColorPickerHSBToHex(
           {h:col.h,
@@ -69,7 +78,12 @@ $(document).ready(function(){
     $(bg).css("background-color", "#"+baseHex );
     //text
     $(bg).css("color", "#"+textColor );
-    $(headers).css("color", "#"+textColor );
+    // headers
+    $(headers).css("color", "#"+headColor );
+    // small
+    $(small).css("color", "#"+subColor );
+    //link
+    $(link).css("color", "#"+linkColor );
     //bars
 
     colorBar(barColorH,barColorL, navbar);
@@ -77,7 +91,7 @@ $(document).ready(function(){
     //input btn
     //dropdownmenu
     if(bg == "body"){
-        $(".dropdown-menu").css("background-color", "#"+barColorH );
+
     }
   }
 
@@ -97,7 +111,7 @@ $(document).ready(function(){
   //            previewChange
   // ==============================================
   function previewChange(hsb){
-    setColors(hsb, "#colorpickerPreview", "#hPreview", ".divbar-inner, #divbar .fill");
+    setColors(hsb, "#colorpickerPreview", "#hPreview", ".divbar-inner, #divbar .fill", "#linkPreview", "#smallPreview");
   }
   // ==============================================
   //            Navbar Bindings
@@ -121,10 +135,19 @@ $(document).ready(function(){
     if ($(location).attr('pathname') == "/"){
       setButton($(this).attr('id'));
       $.get( $(this).attr('href')+'.json', function(data){
+        var curCol =$("h1, h2, h3, h4, h5, h6").css('color');
+        var curLink = $("a").css('color');
+        var curSmall = $("small").css('color');
+        //$('#content').hide();
         $('#content').html(data);
+        $("small").css('color', curSmall);
+        $("h1, h2, h3, h4, h5, h6").css('color', curCol);
+        $("a").css('color', curLink);
+        //$('#content').fadeIn();
         $('#colorpickerHolder').ColorPicker({color: '#f0f000',
                                               flat: true,
                                           onChange: function (hsb) {previewChange(hsb);}});
+        $('#colorpickerPreview').css('background-color',$('body').css('background-color'));
         //var socket = io.connect();
         socket.emit('update_me');
         // SUBMIT COLOR BIND

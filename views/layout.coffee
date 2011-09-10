@@ -8,10 +8,8 @@ html lang: 'en', ->
 
     link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Lobster|Droid+Serif|Droid+Sans'
     link rel: 'stylesheet', href: '/css/style.css'
-    link rel: 'stylesheet', href:'/css/prettify.css'
-    link rel: 'stylesheet', href:'/css/colorpicker.css', media:'screen'
+    link rel: 'stylesheet', href:'/css/colorpicker.css'
     script src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
-    script src: '/js/prettify.js'
     script src: '/js/colorpicker.js'
     script src: '/socket.io/socket.io.js'
     script src: '/js/application.js'
@@ -27,17 +25,8 @@ html lang: 'en', ->
           ul class: 'nav', ->
             li class:'active',  -> a  href:'/', id:'home', -> 'Home'
             li -> a id:'colorpicker', href:'/colorpicker', -> 'Color Picker'
-            li -> a id:'users',       href:'/users',       -> 'Users'
             li -> a id:'about',       href:'/about',       -> 'About'
 
-          ul class: 'nav nav2',    ->
-            li class: 'dropdown', ->
-              a href:'#', id:'no-link',class: 'dropdown-toggle', -> 'Account'
-              ul class: 'dropdown-menu',  ->
-                li -> a href:'/login', id:'login',       ->'Login'
-                li -> a href:'/register', id:'register', ->'Register'
-                li class:'divider'
-                li -> a href:'/logout', id:'home2',       ->'Logout'
 
 
     a href: 'https://github.com/blakmatrix/olive', ->

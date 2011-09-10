@@ -1998,12 +1998,9 @@ body {
   height: 100%;
 }
 a {
-  color: #00B7FF;
+  text-decoration: none;
 }
 .right {
-  float: right;
-}
-.nav.nav2, ul.nav2 {
   float: right;
 }
 #footer {
@@ -2039,7 +2036,6 @@ a {
   border-style: solid;
   border-width: 1px;
   border-color: black;
-  background-color: white;
 }
 #colorpickerHolder {
   width: 356px;
@@ -2056,8 +2052,6 @@ a {
 }
 #divbar {
   position: relative;
-}
-#divbar {
   background-color: #222;
 }
 #containerBarPreview {
@@ -2066,4 +2060,10 @@ a {
 #containerBodyPreview {
   width: 320px;
   margin: 0 auto;
+}
+ul {
+  list-style-type: none;
+}
+.ah3list {
+  text-decoration: none;
 }
