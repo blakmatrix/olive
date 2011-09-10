@@ -1,8 +1,8 @@
 {
   "author": "Farrin A. Reid <blakmatrix@gmail.com> (blakmatrix.com)",
   "name": "Olive",
-  "description": "Olive is a simple app that aims to let users interact on a single shit showing colors of olive",
-  "version": "0.0.2",
+  "description": "Olive is a simple app that aims to let users interact on a single site showing colors of olive",
+  "version": "0.2.0",
   "homepage": "https://github.com/blakmatrix/olive",
   "repository": {
     "type": "git",
