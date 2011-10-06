@@ -11,7 +11,7 @@ $(document).ready(function(){
     setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list","small");
   });
   function emitColors(col){
-    var socket = io.connect();
+    //var socket = io.connect();
     socket.emit('set_color', {change_color: col });
   }
   // ==============================================

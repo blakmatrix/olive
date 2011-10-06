@@ -19,7 +19,7 @@
     "express": "2.4.6",
     "less": "~1.1.4",
     "coffeekup": ">= 0.3.0beta",
-    "socket.io": "~0.8.4"
+    "socket.io": ">= 0.8.4"
   },
   "devDependencies": {}
 }
