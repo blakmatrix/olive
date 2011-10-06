@@ -2,11 +2,11 @@ $(document).ready(function(){
   // ==============================================
   //                 Socket IO
   // ==============================================
-  var socket = io.connect({'connect timeout'        : 5000,
+  var socket = io.connect('http://olive.no.de/',
+                          {'connect timeout'        : 5000,
                            'try multiple transports': true,
                            'reconnect'              : true,
-                           'reconnection delay'     : 500
-  });
+                           'reconnection delay'     : 500});
   socket.emit('update_me');
   socket.on('color_change', function (data) {
    setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list", "small");
