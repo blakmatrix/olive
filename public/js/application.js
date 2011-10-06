@@ -1,6 +1,22 @@
 $(document).ready(function(){
-
+  // ==============================================
+  //                 Socket IO
+  // ==============================================
+  var socket = io.connect();
   socket.emit('update_me');
+  socket.on('color_change', function (data) {
+   setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list", "small");
+  });
+  socket.on('update_color', function (data) {
+    setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list","small");
+  });
+  function emitColors(col){
+    var socket = io.connect();
+    socket.emit('set_color', {change_color: col });
+  }
+  // ==============================================
+  //                 Color Picker insert
+  // ==============================================
   $('#colorpickerHolder').ColorPicker({color: '#f0f000',
                                        flat: true,
                                        onChange: function (hsb) {previewChange(hsb);}});
@@ -24,20 +40,7 @@ $(document).ready(function(){
     $('.topbar .nav li').removeClass('active');
     $('#'+id).parent('li').addClass('active')
   }
-  // ==============================================
-  //                 Socket IO
-  // ==============================================
-  var socket = io.connect();
-  socket.on('color_change', function (data) {
-   setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list", "small");
-  });
-  socket.on('update_color', function (data) {
-    setColors(data.col,"body","h1, h2, h3, h4, h5, h6", ".topbar-inner, .topbar .fill",".ah3list","small");
-  });
-  function emitColors(col){
-    var socket = io.connect();
-    socket.emit('set_color', {change_color: col });
-  }
+
   // ==============================================
   //            setColors & Helpers
   // ==============================================
