@@ -50,7 +50,7 @@ app.get '/about.:format?', (req, res) ->
 hsb =
   h: 60
   s: 100
-  b: 94
+  b: 50
 
 io.sockets.on 'connection', (socket) ->
   socket.emit 'color_change', col: hsb

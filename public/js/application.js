@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-
+  socket.emit('update_me');
   $('#colorpickerHolder').ColorPicker({color: '#f0f000',
                                        flat: true,
                                        onChange: function (hsb) {previewChange(hsb);}});

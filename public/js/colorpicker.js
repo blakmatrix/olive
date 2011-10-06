@@ -21,7 +21,7 @@
 				onHide: function () {},
 				onChange: function () {},
 				onSubmit: function () {},
-				color: 'f0f000',
+				color: '808000',
 				livePreview: true,
 				flat: false
 			},
