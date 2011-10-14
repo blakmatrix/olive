@@ -60,7 +60,6 @@ io.sockets.on 'connection', (socket) ->
     hsb=data.change_color;
     socket.broadcast.emit 'update_color',  col: data.change_color
 
-#Git TEST
 
 # Lets run this app!
 app.listen process.env.PORT || 3000
