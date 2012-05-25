@@ -2,7 +2,7 @@
   "author": "Farrin A. Reid <blakmatrix@gmail.com> (blakmatrix.com)",
   "name": "Olive",
   "description": "Olive is a simple app that aims to let users interact on a single site showing colors of olive",
-  "version": "0.2.0",
+  "version": "0.2.0-4",
   "homepage": "https://github.com/blakmatrix/olive",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   },
   "main": "app.coffee",
   "scripts": {
-    "start": "node_modules/coffeekup/node_modules/coffee-script/bin/coffee app.coffee"
+    "start": "coffee app.coffee"
   },
   "engines": {
     "node": "~v0.4.11"
@@ -21,5 +21,6 @@
     "coffeekup": ">= 0.3.0beta",
     "socket.io": ">= 0.8.4"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "subdomain": "olive"
 }

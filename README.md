@@ -16,7 +16,7 @@
 
 
 ## Try it out
-Test it out at: http://olive.no.de
+Test it out at: http://olive.jit.su
 
 
 ## Install

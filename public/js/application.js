@@ -2,7 +2,7 @@ $(document).ready(function(){
   // ==============================================
   //                 Socket IO
   // ==============================================
-  var socket = io.connect('http://olive.no.de/',
+  var socket = io.connect('http://olive.nodejitsu.com/',
                           {'connect timeout'        : 5000,
                            'try multiple transports': true,
                            'reconnect'              : true,
